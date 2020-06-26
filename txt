@@ -1,11 +1,18 @@
-display:none;隐藏（空间释放）
-display:inline;行级元素
-                1；内容撑起来
-                2；不可以设置宽高
-display：block;块级元素
-                1；自己一行
-                2：可以设置宽高
-display：  inline-block;行级块元素
-                1；可以与其它内容同一行
-                2；可以设置宽高
-visibility:hidden;元素不可见（空间占有） visible 元素可见     
+  
+        display:none;隐藏（空间释放）
+        display:inline;行级元素
+                        1；内容撑起来
+                        2；不可以设置宽高
+        display：block;块级元素
+                        1；自己一行
+                        2：可以设置宽高
+        display：  inline-block;行级块元素
+                        1；可以与其它内容同一行
+                        2；可以设置宽高
+        visibility:hidden;元素不可见（空间占有） visible 元素可见     
+
+文本相关
+        text-indent：30px；首行缩进（元素占据空间大于内容时可见效果）
+        text-align：right 居右 center居中（元素占据空间大于内容时可见效果）
+        letter-spacing：30px；字间距
+        text-de从ration：underline下划线 （文本装饰，多种自己找）
