@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font:14px "HanHei SC","PingFang SC","Avenir Next",Avenir,"Helvetica Neue",Helvetica,"Lantinghei SC","Hiragino Sans GB","Microsoft YaHei",微软雅黑,STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
+}
+ul{list-style: none;}
+a{text-decoration: none;}
+.topbar{
+    font-size: 12px;
+    height: 40px ;
+    background: #333333;
+    color: #ffffff;
+ /* height: 40px; */
+    line-height: 40px;
+}
+.wrapper{
+    width: 1200px;
+    margin:  0 auto;
+}
+
+.topbar-list{
+    float: left;
+}
+.topbar a{
+    
+    color: #ffffff;
+    text-decoration: none;
+}
+.topbar a:hover{
+    color: #ddd;
+}
+.topbar span{margin:0 2px;}
+.topbar-info{
+    float:right;
+}
+
+/* header开始 */
+
+.header{
+    height: 100px;
+    /* background:#ff0000; */
+}
+
+.logo{
+    float: left;
+    margin-top: 23px;}
+.nav{
+    float: right;
+}
+.logo img{
+    width: 187px;
+    height: 55px;
+}
+    
+.header a{
+   
+    color:#333333;
+}
