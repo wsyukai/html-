@@ -16,3 +16,9 @@
         text-align：right 居右 center居中（元素占据空间大于内容时可见效果）
         letter-spacing：30px；字间距
         text-de从ration：underline下划线 （文本装饰，多种自己找）
+
+
+外边距合并
+        1.父元素添加voerflow:hidden;会触发BFC
+        2.父元素添加边框 border：1px solid transparent；
+        3.父元素或者子元素浮动或定位 absolute
