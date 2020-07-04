@@ -215,3 +215,77 @@ color: #ea5600;
     height: 62px;
     line-height: 62px;
 }
+/* footer开始 */
+.footer{
+    height: 209px;
+    /* background: #eeeeee; */
+}
+.footer-left-logo{
+    width: 46px;
+    height: 46px;
+    float: left;
+    margin-right: 18px;
+}
+.footer-left-message li{
+   float: left;
+   border-right: 1px solid #575757;
+   color: #575757;
+   padding: 0 8px 0 8px;
+   
+}
+.footer-left-message li a{
+    color: #575757;
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+    display: block;
+}
+.footer-left-message .two{
+    float: left;
+}
+.footer-left-message{
+    float: left;
+    
+}
+.about{
+    overflow: hidden;
+    padding: 3px 0 10px;
+}
+.contanct li{
+    font-size: 12px;
+    color: #6d6d6d;
+    height: 14px;
+    line-height: 14px;
+
+}
+.right-title{
+color: #575757;
+font-size: 14px;
+}
+.footer-right{
+    float: right;
+    overflow: hidden;
+}
+.right-tel{
+    color: #e84519;
+    font-size: 26px;
+    line-height: 37px;
+    font-weight: 400;
+}
+.right-time{
+    color: #575757;
+    font-size: 12px;
+    line-height: 17px;
+}
+.footer-left{
+    position:relative;
+    top: 100px;
+    
+
+
+}
+.footer-right{
+    position:relative;
+    top: -20px;
+
+}
