@@ -13,6 +13,8 @@
             border: 1px solid;
             width: 120px;
             display: none;
+            position: absolute;
+            background-color:#ffffff;
 
         }
         #menu li{
@@ -41,8 +43,25 @@
         <li>菜单4</li>
         <li>菜单5</li>
     </ul>
+    <h1>hasgdasdkbaksdb</h1>
     <script>
-        
+        var oMenu = document.getElementById('menu');
+        var Lia = oMenu.getElementsByTagName('li')
+        document.oncontextmenu = function(ev){
+            ev = ev || window.event;//兼容性问题
+            oMenu.style.display = 'block';
+            oMenu.style.left = ev.clientX +'px';
+            oMenu.style.top = ev.clientY + 'px';
+            return false;//阻止默认行为
+        };
+        document.onclick = function(){
+            oMenu.style.display = 'none';
+        };
+        for(var i=0; i<Lia.length; i++){
+            Lia[i].onclick = function(){
+                alert(this.innerHTML);
+            };
+        };
     </script>
 </body>
 </html>
