@@ -12,7 +12,7 @@
            <li class="menu-selected">html</li>
            <li>css</li>
            <li>javascript</li>
-       </ul>
+       </ul> 
        <div id="content" >
            <div class="conent-selected">01</div>
            <div>02</div>
@@ -20,7 +20,23 @@
        </div>
     </div>
     <script>
-        
+        var oMenu = document.getElementById('menu');
+        var aLi = oMenu.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].xx = i;//给每个li对象自定义一个属性xx，保存住循环时的值。
+            aLi[i].onclick = function(){
+                for ( var j=0; j<aLi.length; j++){
+                    aLi[j].className = '';
+                    aDiv[j].className = '';
+                };
+                this.className = 'menu-selected';
+                aDiv[this.xx].className = 'conent-selected';
+
+            }
+        }
     </script>
 </body>
 </html>
