@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #imgs img{
+            display: none;
+        }
+        #imgs .selected{
+            display: block;
+        }
+
+        #nav li{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            float: left;
+            margin-left: 5px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="imgs">
+            <img src="/html-/小米/img/bg1.png" alt="" class="selected">
+            <img src="/html-/小米/img/bg2.png" alt="">
+            <img src="/html-/小米/img/footer-logo.png" alt="">
+            <img src="/html-/小米/img/logo_pc-3b3397d3de.png" alt="">
+        </div>
+        <ul id="nav">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrow">
+            <span>&lt;</span>
+            <span>&gt;</span>
+        </div>
+    </div>
+</body>
+</html>
