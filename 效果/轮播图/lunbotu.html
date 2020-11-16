@@ -12,23 +12,44 @@
         li{
             list-style: none;
         }
+        #container{
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+        }
         #imgs img{
             display: none;
         }
         #imgs .selected{
             display: block;
         }
+       #nav{
+           position: absolute;
+           right: 10px;
+           bottom: 10px;
+       }
 
-        #nav li{
+        #nav li,#arrows span{
             width: 20px;
             height: 20px;
-            background: #000000;
+            background-color: #000000;
             color: #fff;
             float: left;
             margin-left: 5px;
-            
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
         }
+        #nav .nav-selected{
+            background-color: orange;
+        }
+        #arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
 
+        }
     </style>
 </head>
 <body>
@@ -40,15 +61,33 @@
             <img src="/html-/小米/img/logo_pc-3b3397d3de.png" alt="">
         </div>
         <ul id="nav">
-            <li>1</li>
+            <li class="nav-selected">1</li>
             <li>2</li>
             <li>3</li>
             <li>4</li>
         </ul>
-        <div id="arrow">
+        <div id="arrows">
             <span>&lt;</span>
             <span>&gt;</span>
         </div>
     </div>
+    <script>
+        var oImgs = document.getElementById('imgs');
+        var aImg = oImgs.getElementsByTagName('img');
+
+        var oNav = document.getElementById('nav');
+        var aLi = oNav.getElementsByTagName('li')
+        for(var i = 0; i<aLi.length; i++){
+            aLi[i].xx = i;
+            aLi[i].onmouseover = function(){
+                for(var j = 0; j<aLi.length; j++){
+                    aLi[j].className = '';
+                    aImg[j].className = '';
+                }
+                this.className = 'nav-selected';
+                aImg[this.xx].className = 'selected';
+            };
+        }
+    </script>
 </body>
 </html>
