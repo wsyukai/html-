@@ -67,8 +67,8 @@
             <li>4</li>
         </ul>
         <div id="arrows">
-            <span>&lt;</span>
-            <span>&gt;</span>
+            <span id="prev">&lt;</span>
+            <span id="netx">&gt;</span>
         </div>
     </div>
     <script>
@@ -76,18 +76,100 @@
         var aImg = oImgs.getElementsByTagName('img');
 
         var oNav = document.getElementById('nav');
-        var aLi = oNav.getElementsByTagName('li')
+        var aLi = oNav.getElementsByTagName('li');
+
+        var oPrev =document.getElementById('prev');
+        var oNext = document.getElementById('netx');
+
+        var oContainer = document.getElementById('container');
+
+        var iNowXx = 0;
+
+
         for(var i = 0; i<aLi.length; i++){
             aLi[i].xx = i;
             aLi[i].onmouseover = function(){
-                for(var j = 0; j<aLi.length; j++){
-                    aLi[j].className = '';
-                    aImg[j].className = '';
+                iNowXx = this.xx;
+                changeImg();
+            //     for(var j = 0; j<aLi.length; j++){
+            //         aLi[j].className = '';
+            //         aImg[j].className = '';
+            //     }
+            //     this.className = 'nav-selected';
+            //     aImg[this.xx].className = 'selected';
+             };
+        };
+        oPrev.onclick = oNext.onclick= function(){
+            if(this === oPrev){
+                iNowXx--;
+                if(iNowXx==-1){
+                    iNowXx = aLi.length - 1;
                 }
-                this.className = 'nav-selected';
-                aImg[this.xx].className = 'selected';
-            };
+            }else{
+                iNowXx++;
+                if(iNowXx== aLi.length){
+                    iNowXx = 0;
+                }
+            }
+            
+            changeImg();
+            // for(var i=0;i<aLi.length;i++){
+            //     aLi[i].className='';
+            //     aImg[i].className='';
+            // }
+            // aLi[iNowXx].className = 'nav-selected';
+            // aImg[iNowXx].className = 'selected';
+        };
+        oPrev.onselectstart = oNext.onselectstart = function(){
+            return false;
         }
+        // oNext.onclick = function(){
+        //     iNowXx++;
+        //     if(iNowXx == aLi.length){
+        //         iNowXx = 0;
+        //     }
+            // changeImg();
+            // for(var i=0;i<aLi.length;i++){
+            //     aLi[i].className='';
+            //     aImg[i].className='';
+            // }
+            // aLi[iNowXx].className = 'nav-selected';
+            // aImg[iNowXx].className = 'selected';
+        // }
+         var timer = setInterval(function(){
+            oNext.onclick();
+            // iNowXx++;
+            // if(iNowXx == aLi.length){
+            //     iNowXx = 0;
+            // }
+            // changeImg();
+        },1000);
+
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function(){
+            timer = setInterval(function(){
+            oNext.onclick();
+        },1000);
+        };
+        function changeImg(){
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].className='';
+                aImg[i].className='';
+            }
+            aLi[iNowXx].className = 'nav-selected';
+            aImg[iNowXx].className = 'selected';
+        }
+
+        
+
+        
+            
+
+        
+
+       
     </script>
 </body>
 </html>
