@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #imgs div{
+                text-align: center;
+        }
+        #container{
+            position: relative;
+        }
+        #imgs{
+            position: relative;
+            height: 500px;
+        }
+        #imgs div{
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        #nav{
+            position: absolute;
+            left: 50%;
+            transform:translateX(-50%) ;
+            bottom: 30px;
+            z-index: 999;
+        }
+        #nav li{
+            width: 25px;
+            height: 5px;
+            background-color: #000;
+            opacity: 0.3;/*这一行和下一行是关于透明度的*/
+            filter: alpha(opacity=30);/*兼容性透明度*/
+            float: left;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="imgs">
+            <div class="banner1" style="z-index: 2;"><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3627301736,2626627093&fm=26&gp=0.jpg" alt=""></div>
+            <div class="banner2" style="z-index: 1;"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3372047239,4020904317&fm=26&gp=0.jpg" alt=""></div>
+            <div class="banner3" style="z-index: 0;"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2714134063,1413949871&fm=26&gp=0.jpg" alt=""></div>
+        </div>
+        <div id="nav">
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </div>
+</body>
+</html>
