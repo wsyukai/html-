@@ -28,6 +28,13 @@
             top: 0;
             left: 0;
             width: 100%;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        #imgs .actived{
+            opacity: 1;
+            z-index: 1;
+            
         }
         #nav{
             position: absolute;
@@ -43,8 +50,13 @@
             opacity: 0.3;/*这一行和下一行是关于透明度的*/
             filter: alpha(opacity=30);/*兼容性透明度*/
             float: left;
-            margin-left: 5px;
+            margin-left: 8px;
         }
+        #nav .selected{
+            background-color: orange;
+            opacity: 0.6;
+        }
+        
     </style>
 </head>
 <body>
@@ -54,11 +66,32 @@
             <div class="banner2" style="z-index: 1;"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3372047239,4020904317&fm=26&gp=0.jpg" alt=""></div>
             <div class="banner3" style="z-index: 0;"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2714134063,1413949871&fm=26&gp=0.jpg" alt=""></div>
         </div>
-        <div id="nav">
+        <ul id="nav">
+            <li class="selected"></li>
             <li></li>
             <li></li>
-            <li></li>
-        </div>
+        </ul>
     </div>
+    <script>
+        var oNav = document.getElementById('nav');
+        var aLi = oNav.getElementsByTagName('li');
+        var oImgs = document.getElementById('imgs');
+        var aDiv = oImgs.getElementsByTagName('div');
+
+
+        for( var i = 0; i<aLi.length ; i++ ){
+            aLi[i].xx = i;
+            aLi[i].onmouseover = function(){
+                for(var j=0;j<aLi.length; j++){
+                    aLi[j].className = '';
+                    aDiv[j].className = 'banner' + (j + 1);
+
+                }
+                this.className = 'selected';
+                aDiv[this.xx].className += ' actived ';
+            }
+        };
+
+    </script>
 </body>
 </html>
