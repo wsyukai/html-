@@ -29,3 +29,6 @@
     display: block;
     clear: both;
 }
+
+
+外部样式无法取值只能赋值，内联样式可以。
