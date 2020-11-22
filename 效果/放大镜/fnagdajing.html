@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #samall,#big{
+            width: 343px;
+            height: 429px;
+            float: left;
+            position: relative;
+        }
+        #big{
+            overflow: hidden;
+            display: none;
+        }
+        #drag{
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            opacity: .5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="samall">
+        <img  src="/html-/效果/放大镜/O1CN01r7KYwh1xt34AzgVV8_!!4223186500.png_430x430q90.png">
+    </div>
+    <div id="big">
+        <img src="/html-/效果/放大镜/123.PNG" alt="">
+    </div>
+    <div id="drag"></div>
+    <script>
+        var oSmall = document.getElementById('samall');
+        var oDrag = document.getElementById('drag');
+        var oBiq = document.getElementById('big');
+
+        oSmall.onmouseover = function(){
+            oDrag.style.display = 'block';
+            oBiq.style.display = 'block';
+        }
+        oSmall.onmouseout = function(){
+            oDrag.style.display = 'none';
+            oBiq.style.display = 'none';
+        }
+
+        oSmall.onmousemove = function(ev){
+            ev = ev || window.event;
+            oDrag.style.top = ev.clientY - ;
+            oDrag.style.left = ev.clientX - ;
+        }
+    </script>
+</body>
+</html>
