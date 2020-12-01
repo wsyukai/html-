@@ -55,8 +55,8 @@
 
         oSmall.onmousemove = function(ev){
             ev = ev || window.event;
-            oDrag.style.top = ev.clientY -1 ;
-            oDrag.style.left = ev.clientX - 1;
+            oDrag.style.top = ev.clientY - oDrag.offsetHeight / 2 + 'px';
+            oDrag.style.left = ev.clientX - oDrag.offsetWidth / 2 + 'px';
         }
     </script>
 </body>

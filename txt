@@ -32,3 +32,6 @@
 
 
 外部样式无法取值只能赋值，内联样式可以。
+
+怪异/混乱盒模型  宽度= 内容 + podding + border
+                转换：box-sizing：border-box
